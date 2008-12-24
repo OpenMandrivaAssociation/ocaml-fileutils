@@ -11,7 +11,7 @@ License:    LGPLv2 with exceptions
 URL:        http://www.gallu.homelinux.org/download/
 Source0:    http://www.gallu.homelinux.org/download/ocaml-fileutils-0.3.0.tar.gz
 BuildRequires:  ocaml
-BuildRequires:  findlib
+BuildRequires:  ocaml-findlib
 BuildRequires:  camlp4
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -55,8 +55,8 @@ make
 
 # ... and copy the files to the right places.
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}/%{ocaml_sitelib}
-cp -r tmp/lib/fileutils %{buildroot}%{ocaml_sitelib}
+install -d -m 755 %{buildroot}/%{_libdir}/ocaml
+cp -r tmp/lib/fileutils %{buildroot}%{_libdir}/ocaml
 rm -rf tmp
 
 %clean
@@ -66,12 +66,14 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc COPYING
-%dir %{ocaml_sitelib}/fileutils
-%{ocaml_sitelib}/fileutils/*.cmi
+%dir %{_libdir}/ocaml/fileutils
+%{_libdir}/ocaml/fileutils/*.cmi
+%{_libdir}/ocaml/fileutils/*.cma
+%{_libdir}/ocaml/fileutils/META
 
 %files devel
 %defattr(-,root,root)
 %doc COPYING AUTHOR CHANGELOG README TODO
-%{ocaml_sitelib}/fileutils/*
-%exclude %{ocaml_sitelib}/fileutils/*.cmi
+%{_libdir}/ocaml/fileutils/*.a
+%{_libdir}/ocaml/fileutils/*.cmxa
 
