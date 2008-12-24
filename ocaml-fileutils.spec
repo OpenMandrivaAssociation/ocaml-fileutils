@@ -1,6 +1,6 @@
 %define name	ocaml-fileutils
 %define version	0.3.0
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
