@@ -9,7 +9,7 @@ Summary:    OCaml library for common file and filename operations
 Group:      Development/Other
 License:    LGPLv2 with exceptions
 URL:        http://www.gallu.homelinux.org/download/
-Source0:    http://www.gallu.homelinux.org/download/ocaml-fileutils-0.3.0.tar.gz
+Source0:    http://www.gallu.homelinux.org/download/ocaml-fileutils-%{version}.tar.gz
 BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:  camlp4
