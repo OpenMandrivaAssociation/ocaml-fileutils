@@ -1,10 +1,6 @@
-%define name    ocaml-fileutils
-%define version 0.3.0
-%define release %mkrel 4
-
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:           ocaml-fileutils
+Version:        0.4.0
+Release:        %mkrel 1
 Summary:        OCaml library for common file and filename operations
 Group:          Development/Other
 License:        LGPLv2 with exceptions
@@ -30,38 +26,26 @@ Summary:        Development files for %{name}
 Group:          Development/Other
 Requires:       %{name} = %{version}-%{release}
 
-
 %description    devel
 The %{name}-devel package contains libraries and signature files for
 developing applications that use %{name}.
 
 %prep
 %setup -q
-# The whole build system for this package is totally broken.
-# We build into a temporary directory then copy the files
-# to the right place.
-./configure --prefix=%{_prefix} --libdir=%{_libdir} \
-  --enable-ocamlfind \
-  --with-builddir=`pwd`/tmp
+./configure --libdir=%{_libdir}
 
 %build
-# Nothing: 'make' builds and installs.  Stupid!
+make
 
 %install
-# Go and do your broken stuff now ...
-rm -rf tmp
-make
-# make doc   (borked)
-
-# ... and copy the files to the right places.
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}/%{_libdir}/ocaml
-cp -r tmp/lib/fileutils %{buildroot}%{_libdir}/ocaml
-rm -rf tmp
+export DESTDIR=%{buildroot}
+export OCAMLFIND_DESTDIR=%{buildroot}/%{_libdir}/ocaml
+mkdir -p $OCAMLFIND_DESTDIR $OCAMLFIND_DESTDIR/stublibs
+make install prefix=%{buildroot}/usr htmldir=%{buildroot}%{_docdir}/%{name}-devel
 
 %clean
 rm -rf %{buildroot}
-
 
 %files
 %defattr(-,root,root)
@@ -76,4 +60,6 @@ rm -rf %{buildroot}
 %doc COPYING AUTHOR CHANGELOG README TODO
 %{_libdir}/ocaml/fileutils/*.a
 %{_libdir}/ocaml/fileutils/*.cmxa
-
+%{_libdir}/ocaml/fileutils/*.cmx
+%{_libdir}/ocaml/fileutils/*.ml
+%{_libdir}/ocaml/fileutils/*.mli
