@@ -1,19 +1,19 @@
-%define name	ocaml-fileutils
-%define version	0.3.0
-%define release	%mkrel 4
+%define name    ocaml-fileutils
+%define version 0.3.0
+%define release %mkrel 4
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Summary:    OCaml library for common file and filename operations
-Group:      Development/Other
-License:    LGPLv2 with exceptions
-URL:        http://www.gallu.homelinux.org/download/
-Source0:    http://www.gallu.homelinux.org/download/ocaml-fileutils-%{version}.tar.gz
+Name:           %{name}
+Version:        %{version}
+Release:        %{release}
+Summary:        OCaml library for common file and filename operations
+Group:          Development/Other
+License:        LGPLv2 with exceptions
+URL:            http://www.gallu.homelinux.org/download/
+Source0:        http://www.gallu.homelinux.org/download/ocaml-fileutils-%{version}.tar.gz
 BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:  camlp4
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 This library is intended to provide a basic interface to the most
