@@ -63,3 +63,35 @@ rm -rf %{buildroot}
 %{_libdir}/ocaml/fileutils/*.cmx
 %{_libdir}/ocaml/fileutils/*.ml
 %{_libdir}/ocaml/fileutils/*.mli
+
+
+%changelog
+* Mon Aug 23 2010 Florent Monnier <blue_prawn@mandriva.org> 0.4.0-1mdv2011.0
++ Revision: 572350
+- new url (moved permanently)
+
+* Mon Apr 19 2010 Florent Monnier <blue_prawn@mandriva.org> 0.4.0-1mdv2010.1
++ Revision: 536860
+- updated to version 0.4.0
+- just a retab
+
+* Mon Jan 25 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.3.0-4mdv2010.1
++ Revision: 496362
+- rebuild
+
+* Sat Jun 27 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.3.0-3mdv2010.0
++ Revision: 389931
+- rebuild
+
+* Wed Dec 24 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.3.0-2mdv2009.1
++ Revision: 318328
+- move non-devel files in main package
+- site-lib hierarchy doesn't exist anymore
+
+* Thu Aug 14 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.3.0-1mdv2009.0
++ Revision: 271934
+- import ocaml-fileutils
+
+
+* Thu Aug 14 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.3.0-1mdv2009.0
+- first mdv release, stolen from redhat
