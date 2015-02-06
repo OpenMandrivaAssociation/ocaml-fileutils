@@ -4,7 +4,7 @@
 Summary:	OCaml library for common file and filename operations
 Name:		ocaml-fileutils
 Version:	0.4.5
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Development/Other
 Url:		http://ocaml-fileutils.forge.ocamlcore.org/
