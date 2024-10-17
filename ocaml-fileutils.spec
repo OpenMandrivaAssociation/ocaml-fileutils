@@ -7,7 +7,7 @@ Version:	0.4.5
 Release:	2
 License:	LGPLv2+
 Group:		Development/Other
-Url:		http://ocaml-fileutils.forge.ocamlcore.org/
+Url:		https://ocaml-fileutils.forge.ocamlcore.org/
 Source0:	http://forge.ocamlcore.org/frs/download.php/1194/ocaml-fileutils-%{version}.tar.gz
 BuildRequires:	camlp4
 BuildRequires:	ocaml
